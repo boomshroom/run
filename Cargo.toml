@@ -1,0 +1,17 @@
+cargo-features = ["panic-immediate-abort"]
+
+[package]
+name = "run"
+version = "0.1.0"
+edition = "2024"
+description = "Run a single command from a shebang without Bash"
+license = "0BSD"
+
+[dependencies]
+
+[profile.release]
+opt-level = "s"
+panic = "immediate-abort"
+lto = true
+strip = true
+codegen-units = 1
